@@ -8,6 +8,8 @@ import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
+// Actividad Clase 4
+import android.widget.Toast
 
 class MainActivity : AppCompatActivity() {
 
@@ -36,7 +38,8 @@ class MainActivity : AppCompatActivity() {
 
         Log.i("Prueba","Usuario : $username y  Clave : $password  ")
 
-
+        // Actividad Clase 4
+        Toast.makeText(this, "Bienvenido, $username", Toast.LENGTH_LONG).show()
     }
 
     }
