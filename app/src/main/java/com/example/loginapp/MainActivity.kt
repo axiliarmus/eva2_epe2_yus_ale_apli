@@ -34,7 +34,7 @@ class MainActivity : AppCompatActivity() {
         val username= usernameInput.text.toString()
         val password= passwordInput.text.toString()
 
-        Log.i("Prueba","Usuario : $username y Clave : $password  ")
+        Log.i("Prueba","Usuario : $username y  Clave : $password  ")
 
 
     }
