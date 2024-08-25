@@ -39,7 +39,7 @@ class MainActivity : AppCompatActivity() {
         Log.i("Prueba","Usuario : $username y  Clave : $password  ")
 
         // Actividad Clase 4
-        Toast.makeText(this, "Bienvenido!!! , $username", Toast.LENGTH_LONG).show()
+        Toast.makeText(this, "Bienvenido! , $username", Toast.LENGTH_LONG).show()
     }
 
     }
