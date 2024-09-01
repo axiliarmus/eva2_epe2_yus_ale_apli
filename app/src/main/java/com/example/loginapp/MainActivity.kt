@@ -1,21 +1,21 @@
 package com.example.loginapp
 
+import android.content.Intent
 import android.os.Bundle
 import android.util.Log
 import android.widget.Button
 import android.widget.EditText
+import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
-// Actividad Clase 4
-import android.widget.Toast
 
 class MainActivity : AppCompatActivity() {
 
-    lateinit var usernameInput : EditText
-    lateinit var passwordInput : EditText
-    lateinit var loginBtn : Button
+    lateinit var usernameInput: EditText
+    lateinit var passwordInput: EditText
+    lateinit var loginBtn: Button
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -25,22 +25,25 @@ class MainActivity : AppCompatActivity() {
             val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
             insets
-
-
         }
+
         usernameInput = findViewById(R.id.username_input)
         passwordInput = findViewById(R.id.password_input)
         loginBtn = findViewById(R.id.Login_btn)
 
-    loginBtn.setOnClickListener {
-        val username= usernameInput.text.toString()
-        val password= passwordInput.text.toString()
+        loginBtn.setOnClickListener {
+            val username = usernameInput.text.toString()
+            val password = passwordInput.text.toString()
 
-        Log.i("Prueba","Usuario : $username y  Clave : $password  ")
+            Log.i("Prueba", "Usuario : $username y Clave : $password")
 
-        // Actividad Clase 4
-        Toast.makeText(this, "Bienvenido! , $username", Toast.LENGTH_LONG).show()
-    }
+            // Mostrar mensaje al usuario
+            Toast.makeText(this, "Bienvenido, $username", Toast.LENGTH_LONG).show()
 
+            // Crear un Intent para ir a la nueva actividad
+            val intent = Intent(this, HomeActivity::class.java)
+            intent.putExtra("USERNAME", username)
+            startActivity(intent)
+        }
     }
 }
