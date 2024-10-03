@@ -42,8 +42,8 @@ class MainActivity : AppCompatActivity() {
             if (isValid) {
                 Toast.makeText(this, "Usuario $username autenticado correctamente.", Toast.LENGTH_SHORT).show()
                 // Ir a la pantalla de inicio
-                val intent = Intent(this, HomeActivity::class.java)
-                intent.putExtra("USERNAME", username)
+                val intent = Intent(this, MenuActivity::class.java)
+                intent.putExtra("USERNAME", username) // Pasar el nombre de usuario a MenuActivity
                 startActivity(intent)
             } else {
                 Toast.makeText(this, "Error: Credenciales incorrectas.", Toast.LENGTH_SHORT).show()

@@ -1,7 +1,6 @@
 package com.example.loginapp
 
 import android.content.Intent
-import android.net.Uri
 import android.os.Bundle
 import android.widget.Button
 import android.widget.EditText
@@ -11,7 +10,6 @@ import androidx.appcompat.app.AppCompatActivity
 
 class HomeActivity : AppCompatActivity() {
 
-    // Declaración de los elementos de la interfaz
     lateinit var firstNameInput: EditText
     lateinit var lastNameInput: EditText
     lateinit var comunaInput: EditText
@@ -26,12 +24,12 @@ class HomeActivity : AppCompatActivity() {
         // Inicializar la base de datos
         databaseHelper = DatabaseHelper(this)
 
-        // Obtener el nombre de usuario pasado desde MainActivity
+        // Obtener el nombre de usuario pasado desde MenuActivity
         val username = intent.getStringExtra("USERNAME")
 
         // Configurar el mensaje de bienvenida
         val welcomeMessage = findViewById<TextView>(R.id.welcome_message)
-        welcomeMessage.text = "Bienvenido, $username"
+        welcomeMessage.text = "Bienvenido, $username" // Asegúrate de tener un TextView con este id
 
         // Referencias a los campos de entrada
         firstNameInput = findViewById(R.id.first_name_input)
@@ -47,14 +45,12 @@ class HomeActivity : AppCompatActivity() {
             val comuna = comunaInput.text.toString().trim()
             val observation = observationInput.text.toString().trim()
 
-            // Validar que todos los campos estén completos
             if (firstName.isEmpty() || lastName.isEmpty() || comuna.isEmpty() || observation.isEmpty()) {
                 Toast.makeText(this, "Por favor, complete todos los campos.", Toast.LENGTH_LONG).show()
             } else {
                 // Guardar los datos en la base de datos si es necesario (opcional)
-                val isInserted = databaseHelper.addUser(firstName, lastName) // Puedes cambiar a otra tabla si es necesario
+                val isInserted = databaseHelper.addUser(firstName, lastName)
                 if (isInserted) {
-                    // Si los datos fueron insertados correctamente, enviar el correo
                     sendEmail(username, firstName, lastName, comuna, observation)
                 } else {
                     Toast.makeText(this, "Error al guardar los datos.", Toast.LENGTH_SHORT).show()
@@ -75,7 +71,7 @@ class HomeActivity : AppCompatActivity() {
 
         val emailIntent = Intent(Intent.ACTION_SEND).apply {
             type = "message/rfc822"
-            putExtra(Intent.EXTRA_EMAIL, arrayOf("francisco.yanez@edu.ipchile.cl")) // Puedes cambiar el correo aquí
+            putExtra(Intent.EXTRA_EMAIL, arrayOf("francisco.yanez@edu.ipchile.cl")) // Cambia el correo aquí si es necesario
             putExtra(Intent.EXTRA_SUBJECT, subject)
             putExtra(Intent.EXTRA_TEXT, message)
         }
