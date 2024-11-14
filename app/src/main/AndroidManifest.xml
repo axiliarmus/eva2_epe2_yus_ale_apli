@@ -13,13 +13,6 @@
         android:theme="@style/Theme.LoginApp"
         tools:targetApi="31">
 
-        <!-- HomeActivity -->
-        <activity
-            android:name=".HomeActivity"
-            android:exported="false"
-            android:label="@string/title_activity_home"
-            android:theme="@style/Theme.LoginApp" />
-
         <!-- MainActivity -->
         <activity
             android:name=".MainActivity"
@@ -35,27 +28,13 @@
             android:name=".MenuActivity"
             android:exported="true" /> <!-- Actividad de menú -->
 
-        <!-- CRUDActivity -->
-        <activity
-            android:name=".CRUDActivity"
-            android:exported="true" /> <!-- Actividad para CRUD -->
+        <activity android:name=".IngresarVentaActivity"
+            android:label="Registrar Venta" />
 
-        <!-- Agregar las actividades específicas de CRUD -->
-        <activity
-            android:name=".CreateActivity"
-            android:exported="false" />
+        <activity android:name=".ListVentasActivity">
+            <!-- Configuración adicional si es necesario -->
+        </activity>
 
-        <activity
-            android:name=".ReadActivity"
-            android:exported="false" />
-
-        <activity
-            android:name=".UpdateActivity"
-            android:exported="false" />
-
-        <activity
-            android:name=".DeleteActivity"
-            android:exported="false" />
 
     </application>
 

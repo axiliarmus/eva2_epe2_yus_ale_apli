@@ -1,32 +1,38 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="@drawable/login_background"
+    android:gravity="center"
+    android:padding="16dp">
 
-    <TextView
-        android:id="@+id/menu_title"
-        android:layout_width="wrap_content"
+    <LinearLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Menú"
-        android:textSize="24sp"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="50dp"/>
+        android:gravity="center"
+        android:orientation="vertical">
 
-    <Button
-        android:id="@+id/go_to_home_button"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Formulario"
-        android:layout_below="@id/menu_title"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="20dp"/>
+        <Button
+            android:id="@+id/ingresar_venta_btn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Ingresar Venta"
+            android:textColor="#FFFFFF"
+            android:backgroundTint="#3b84F1"
+            android:padding="18dp"
+            android:textSize="20sp"
+            android:layout_marginBottom="20dp" />
 
-    <Button
-        android:id="@+id/go_to_crud_button"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Ir a CRUD"
-        android:layout_below="@id/go_to_home_button"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="20dp"/>
+        <Button
+            android:id="@+id/listar_ventas_btn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Listar Ventas"
+            android:textColor="#FFFFFF"
+            android:backgroundTint="#3b84F1"
+            android:padding="18dp"
+            android:textSize="20sp" />
+
+    </LinearLayout>
+
 </RelativeLayout>

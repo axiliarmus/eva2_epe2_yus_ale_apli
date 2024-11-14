@@ -7,29 +7,25 @@ import androidx.appcompat.app.AppCompatActivity
 
 class MenuActivity : AppCompatActivity() {
 
-    lateinit var username: String
+    lateinit var ingresarVentaBtn: Button
+    lateinit var listarVentasBtn: Button
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_menu)
+        setContentView(R.layout.activity_menu)  // Asegúrate de que este sea el nombre correcto del layout
 
-        // Obtener el nombre de usuario pasado desde MainActivity
-        username = intent.getStringExtra("USERNAME") ?: ""
+        ingresarVentaBtn = findViewById(R.id.ingresar_venta_btn)
+        listarVentasBtn = findViewById(R.id.listar_ventas_btn)
 
-        // Botón para ir a HomeActivity
-        val goToHomeButton = findViewById<Button>(R.id.go_to_home_button)
-        goToHomeButton.setOnClickListener {
-            // Ir a HomeActivity y pasar el nombre de usuario
-            val intent = Intent(this, HomeActivity::class.java)
-            intent.putExtra("USERNAME", username) // Pasar el nombre de usuario a HomeActivity
+        // Redirigir a la actividad de ingresar venta
+        ingresarVentaBtn.setOnClickListener {
+            val intent = Intent(this, IngresarVentaActivity::class.java)
             startActivity(intent)
         }
 
-        // Botón para ir a CRUDActivity
-        val goToCrudButton = findViewById<Button>(R.id.go_to_crud_button)
-        goToCrudButton.setOnClickListener {
-            // Ir a CRUDActivity
-            val intent = Intent(this, CRUDActivity::class.java)
+        // Redirigir a la actividad de listar ventas
+        listarVentasBtn.setOnClickListener {
+            val intent = Intent(this, ListVentasActivity::class.java)
             startActivity(intent)
         }
     }

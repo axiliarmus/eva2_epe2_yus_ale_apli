@@ -1,4 +1,10 @@
 <resources>
     <string name="app_name">LoginApp</string>
-    <string name="title_activity_home">HomeActivity</string>
+    <string-array name="medio_pago_options">
+        <item>Efectivo</item>
+        <item>Tarjeta de crédito</item>
+        <item>Tarjeta de débito</item>
+        <item>Transferencia</item>
+    </string-array>
+    <string name="title_activity_home">Home</string>
 </resources>

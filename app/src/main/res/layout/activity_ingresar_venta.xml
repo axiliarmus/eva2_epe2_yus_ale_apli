@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/login_background">
+
+    <!-- Spinner para seleccionar el producto -->
+    <Spinner
+        android:id="@+id/spinnerProducto"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:layout_alignParentTop="true"
+        android:spinnerMode="dropdown"
+        android:popupBackground="#000000" />
+
+    <!-- EditText para el monto de la venta -->
+    <EditText
+        android:id="@+id/etMonto"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Monto de la venta"
+        android:inputType="numberDecimal"
+        android:layout_below="@id/spinnerProducto"
+        android:layout_marginTop="16dp"
+        android:padding="16dp"
+        android:textColor="#FFFFFF"
+        android:textColorHint="#FFFFFF"/>
+
+    <!-- Spinner para seleccionar el medio de pago -->
+    <Spinner
+        android:id="@+id/spinnerMedioPago"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/etMonto"
+        android:layout_marginTop="16dp"
+        android:spinnerMode="dropdown"
+        android:popupBackground="#000000" />
+
+    <!-- Botón para registrar la venta -->
+    <Button
+        android:id="@+id/btnRegistrarVenta"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Registrar Venta"
+        android:layout_below="@id/spinnerMedioPago"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="24dp"
+        android:textColor="#FFFFFF"/>
+</RelativeLayout>

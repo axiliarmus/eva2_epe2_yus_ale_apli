@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp"
+    android:background="@drawable/login_background"
+    >
+
+    <EditText
+        android:id="@+id/etFecha"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Ingresa fecha (yyyy-MM-dd)"
+        android:inputType="none"
+        android:focusable="false"
+        android:clickable="true"
+        android:textColor="#FFFFFF"
+        android:textColorHint="#FFFFFF"
+        android:backgroundTint="#FFFFFF"/>
+
+
+    <!-- Botón para filtrar ventas -->
+    <Button
+        android:id="@+id/btnFiltrarVentas"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Filtrar Ventas" />
+
+    <!-- ListView para mostrar las ventas -->
+    <ListView
+        android:id="@+id/listViewVentas"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+</LinearLayout>
+

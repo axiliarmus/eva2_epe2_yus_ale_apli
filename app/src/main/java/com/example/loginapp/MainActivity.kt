@@ -7,6 +7,8 @@ import android.widget.EditText
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 
+
+
 class MainActivity : AppCompatActivity() {
 
     lateinit var usernameInput: EditText
@@ -21,10 +23,6 @@ class MainActivity : AppCompatActivity() {
         // Inicializar la base de datos
         databaseHelper = DatabaseHelper(this)
 
-        // Agregar usuarios predeterminados
-        databaseHelper.addUser("admin", "12345")
-        databaseHelper.addUser("user", "password")
-        databaseHelper.addUser("francisco", "123456  ")
 
         // Referencias a los campos de entrada
         usernameInput = findViewById(R.id.username_input)
@@ -40,13 +38,21 @@ class MainActivity : AppCompatActivity() {
             val isValid = databaseHelper.checkUser(username, password)
 
             if (isValid) {
-                Toast.makeText(this, "Usuario $username autenticado correctamente.", Toast.LENGTH_SHORT).show()
+                Toast.makeText(
+                    this,
+                    "Usuario $username autenticado correctamente.",
+                    Toast.LENGTH_SHORT
+                ).show()
                 // Ir a la pantalla de inicio
                 val intent = Intent(this, MenuActivity::class.java)
-                intent.putExtra("USERNAME", username) // Pasar el nombre de usuario a MenuActivity
+                intent.putExtra(
+                    "USERNAME",
+                    username
+                ) // Pasar el nombre de usuario a MenuActivity
                 startActivity(intent)
             } else {
-                Toast.makeText(this, "Error: Credenciales incorrectas.", Toast.LENGTH_SHORT).show()
+                Toast.makeText(this, "Error: Credenciales incorrectas.", Toast.LENGTH_SHORT)
+                    .show()
             }
         }
     }

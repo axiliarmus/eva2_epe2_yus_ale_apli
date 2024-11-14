@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="16dp"
+    android:background="@drawable/login_background"
+    android:layout_marginBottom="8dp"> <!-- Asegúrate de que esto sea dentro de un ViewGroup -->
+
+    <!-- TextView para el nombre de la venta -->
+<TextView
+android:id="@+id/textViewNombre"
+android:layout_width="match_parent"
+android:layout_height="wrap_content"
+android:text="Nombre de la venta"
+android:textColor="#FFFFFF"
+    android:textSize="18sp"
+    android:textStyle="bold" />
+
+    <!-- TextView para el precio de la venta -->
+<TextView
+android:id="@+id/textViewPrecio"
+android:layout_width="match_parent"
+android:layout_height="wrap_content"
+android:text="Precio"
+android:textColor="#FFFFFF"
+    android:textSize="16sp" />
+
+    <!-- TextView para la fecha de la venta -->
+<TextView
+android:id="@+id/textViewFecha"
+android:layout_width="match_parent"
+android:layout_height="wrap_content"
+android:text="Fecha"
+android:textColor="#FFFFFF"
+    android:textSize="14sp" />
+
+    <!-- TextView para el medio de pago de la venta -->
+<TextView
+android:id="@+id/textViewMedioPago"
+android:layout_width="match_parent"
+android:layout_height="wrap_content"
+android:text="Medio de pago"
+android:textColor="#FFFFFF"
+    android:textSize="14sp" />
+    </LinearLayout>
+
