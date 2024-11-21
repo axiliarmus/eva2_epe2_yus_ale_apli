@@ -59,6 +59,18 @@
             android:textColor="#3b84F1"
             android:textSize="20sp" />
 
+        <Button
+            android:id="@+id/create_user_btn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:backgroundTint="@color/white"
+            android:padding="18dp"
+            android:text="Crear Usuario"
+            android:textColor="#3b84F1"
+            android:textSize="20sp" />
+
+
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"

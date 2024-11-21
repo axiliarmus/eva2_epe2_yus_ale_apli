@@ -14,6 +14,7 @@ class MainActivity : AppCompatActivity() {
     lateinit var usernameInput: EditText
     lateinit var passwordInput: EditText
     lateinit var loginBtn: Button
+    lateinit var createUserBtn: Button
     lateinit var databaseHelper: DatabaseHelper
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -28,6 +29,8 @@ class MainActivity : AppCompatActivity() {
         usernameInput = findViewById(R.id.username_input)
         passwordInput = findViewById(R.id.password_input)
         loginBtn = findViewById(R.id.Login_btn)
+        createUserBtn = findViewById(R.id.create_user_btn)
+
 
         // Configurar el botón de inicio de sesión
         loginBtn.setOnClickListener {
@@ -54,6 +57,10 @@ class MainActivity : AppCompatActivity() {
                 Toast.makeText(this, "Error: Credenciales incorrectas.", Toast.LENGTH_SHORT)
                     .show()
             }
+        }
+        createUserBtn.setOnClickListener {
+            val intent = Intent(this, CreateUserActivity::class.java)
+            startActivity(intent)
         }
     }
 }

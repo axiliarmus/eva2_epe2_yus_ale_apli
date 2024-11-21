@@ -35,6 +35,9 @@
             <!-- Configuración adicional si es necesario -->
         </activity>
 
+        <activity android:name=".CreateUserActivity" />
+
+
 
     </application>
 

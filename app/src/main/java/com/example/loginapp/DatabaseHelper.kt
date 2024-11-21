@@ -62,21 +62,33 @@ class DatabaseHelper(context: Context) : SQLiteOpenHelper(context, DATABASE_NAME
     }
 
 
-    private fun insertarUsuarioAdmin(db: SQLiteDatabase) {
-        // Consultar si el usuario admin ya existe
-        val cursor: Cursor = db.rawQuery("SELECT * FROM $TABLE_USERS WHERE $COLUMN_USERNAME = ?", arrayOf("admin"))
+    // Método para crear un nuevo usuario
+    fun crearUsuario(username: String, password: String): Boolean {
+        val db = writableDatabase  // Abrimos la base de datos en modo escritura
 
-        // Si no hay resultados, insertar el usuario admin
-        if (cursor.count == 0) {
-            val values = ContentValues().apply {
-                put(COLUMN_USERNAME, "admin")
-                put(COLUMN_PASSWORD, "12345")
-            }
-            db.insert(TABLE_USERS, null, values) // Insertar el usuario admin
+        // Verificar si el usuario ya existe
+        val cursor: Cursor = db.rawQuery("SELECT * FROM $TABLE_USERS WHERE $COLUMN_USERNAME = ?", arrayOf(username))
+        if (cursor.count > 0) {
+            // El usuario ya existe
+            cursor.close()
+            db.close()
+            return false
         }
 
-        cursor.close() // Cerrar el cursor
+        // Si el usuario no existe, insertamos un nuevo usuario
+        val values = ContentValues().apply {
+            put(COLUMN_USERNAME, username)
+            put(COLUMN_PASSWORD, password)
+        }
+
+        // Insertar el nuevo usuario en la base de datos
+        val result = db.insert(TABLE_USERS, null, values)
+        cursor.close()
+        db.close()
+
+        return result != -1L  // Retorna true si la inserción fue exitosa, false si hubo un error
     }
+
 
 
 
